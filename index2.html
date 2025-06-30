@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jatin's C Programs</title>
+  <style>
+    :root {
+      --primary: #007acc;
+      --background: #f9f9fb;
+      --card-bg: #ffffff;
+      --text: #333;
+      --shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    #search {
+      display: block;
+      margin: 0 auto 30px auto;
+      padding: 12px 16px;
+      width: 100%;
+      max-width: 500px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    #search:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
+    }
+
+    .buttons {
+      text-align: center;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 8px 16px;
+      background-color: var(--primary);
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #005f99;
+    }
+
+    ul#programList {
+      list-style: none;
+      padding: 0;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    ul#programList li {
+      background: var(--card-bg);
+      margin: 12px 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.2s ease;
+    }
+
+    ul#programList li:hover {
+      transform: scale(1.01);
+    }
+
+    ul#programList a {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .category {
+      background-color: #e3ecf5;
+      color: #007acc;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      ul#programList li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jatin's C Programming Library</h1>
+
+  <input type="text" id="search" placeholder="🔍 Search for a program..." />
+
+  <div class="buttons">
+    <button onclick="filterPrograms('all')">All</button>
+    <button onclick="filterPrograms('array')">Arrays</button>
+    <button onclick="filterPrograms('loop')">Loops</button>
+    <button onclick="filterPrograms('string')">Strings</button>
+    <button onclick="filterPrograms('math')">Math</button>
+    <button onclick="filterPrograms('function')">Functions</button>
+    <button onclick="filterPrograms('file')">File Handling</button>
+    <button onclick="filterPrograms('pointer')">Pointers</button>
+    <button onclick="filterPrograms('structure')">Structures</button>
+    <button onclick="filterPrograms('recursion')">Recursion</button>
+    <button onclick="filterPrograms('sort')">Sorting</button>
+  </div>
+
+  <ul id="programList">
+    <!-- Example programs -->
+    <li data-category="loop">
+      <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
+      <span class="category">Loop</span>
+    </li>
+    <li data-category="array">
+      <a href="codes/array_sum.c" target="_blank">Sum of Array Elements</a>
+      <span class="category">Array</span>
+    </li>
+    <li data-category="string">
+      <a href="codes/string_length.c" target="_blank">String Length</a>
+      <span class="category">String</span>
+    </li>
+    <li data-category="math">
+      <a href="codes/prime_checker.c" target="_blank">Prime Number Checker</a>
+      <span class="category">Math</span>
+    </li>
+    <li data-category="function">
+      <a href="codes/factorial_function.c" target="_blank">Factorial using Function</a>
+      <span class="category">Function</span>
+    </li>
+    <li data-category="file">
+      <a href="codes/file_read_write.c" target="_blank">File Read & Write</a>
+      <span class="category">File Handling</span>
+    </li>
+    <li data-category="pointer">
+      <a href="codes/pointer_basics.c" target="_blank">Pointer Basics</a>
+      <span class="category">Pointer</span>
+    </li>
+    <li data-category="structure">
+      <a href="codes/structure_student.c" target="_blank">Student Record using Structure</a>
+      <span class="category">Structure</span>
+    </li>
+    <li data-category="recursion">
+      <a href="codes/fibonacci_recursion.c" target="_blank">Fibonacci using Recursion</a>
+      <span class="category">Recursion</span>
+    </li>
+    <li data-category="sort">
+      <a href="codes/bubble_sort.c" target="_blank">Bubble Sort</a>
+      <span class="category">Sorting</span>
+    </li>
+  </ul>
+
+  <footer>
+    © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank">GitHub Profile</a>
+  </footer>
+
+  <script>
+    function filterPrograms(category) {
+      const items = document.querySelectorAll("#programList li");
+      items.forEach(item => {
+        const match = category === "all" || item.dataset.category === category;
+        item.style.display = match ? "flex" : "none";
+      });
+    }
+
+    document.getElementById("search").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const items = document.querySelectorAll("#programList li");
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? "flex" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
