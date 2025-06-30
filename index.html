@@ -54,12 +54,14 @@
     .buttons {
       text-align: center;
       margin-bottom: 20px;
+      display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .buttons button {
-      margin: 6px;
-      padding: 10px 18px;
+      padding: 8px 16px;
       background-color: var(--primary);
       border: none;
       border-radius: 20px;
@@ -145,11 +147,18 @@
     <button onclick="filterPrograms('loop')">Loops</button>
     <button onclick="filterPrograms('string')">Strings</button>
     <button onclick="filterPrograms('math')">Math</button>
+    <button onclick="filterPrograms('function')">Functions</button>
+    <button onclick="filterPrograms('file')">File Handling</button>
+    <button onclick="filterPrograms('pointer')">Pointers</button>
+    <button onclick="filterPrograms('structure')">Structures</button>
+    <button onclick="filterPrograms('recursion')">Recursion</button>
+    <button onclick="filterPrograms('sort')">Sorting</button>
   </div>
 
   <ul id="programList">
+    <!-- Example programs -->
     <li data-category="loop">
-      <a href="codes/ab_sum.c" target="_blank">While Loop Example</a>
+      <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
       <span class="category">Loop</span>
     </li>
     <li data-category="array">
@@ -164,9 +173,29 @@
       <a href="codes/prime_checker.c" target="_blank">Prime Number Checker</a>
       <span class="category">Math</span>
     </li>
-    <li data-category="array">
-      <a href="codes/array_reverse.c" target="_blank">Reverse an Array</a>
-      <span class="category">Array</span>
+    <li data-category="function">
+      <a href="codes/factorial_function.c" target="_blank">Factorial using Function</a>
+      <span class="category">Function</span>
+    </li>
+    <li data-category="file">
+      <a href="codes/file_read_write.c" target="_blank">File Read & Write</a>
+      <span class="category">File Handling</span>
+    </li>
+    <li data-category="pointer">
+      <a href="codes/pointer_basics.c" target="_blank">Pointer Basics</a>
+      <span class="category">Pointer</span>
+    </li>
+    <li data-category="structure">
+      <a href="codes/structure_student.c" target="_blank">Student Record using Structure</a>
+      <span class="category">Structure</span>
+    </li>
+    <li data-category="recursion">
+      <a href="codes/fibonacci_recursion.c" target="_blank">Fibonacci using Recursion</a>
+      <span class="category">Recursion</span>
+    </li>
+    <li data-category="sort">
+      <a href="codes/bubble_sort.c" target="_blank">Bubble Sort</a>
+      <span class="category">Sorting</span>
     </li>
   </ul>
 
