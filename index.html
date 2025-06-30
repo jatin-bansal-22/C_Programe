@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jatin's C Programs</title>
   <style>
+    :root {
+      --primary: #007acc;
+      --background: #f9f9fb;
+      --card-bg: #ffffff;
+      --text: #333;
+      --shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f5f7fa;
-      margin: 0;
+      background: var(--background);
+      color: var(--text);
       padding: 20px;
-      color: #333;
     }
 
     h1 {
       text-align: center;
-      color: #007acc;
+      margin-bottom: 25px;
+      font-size: 2.5rem;
+      color: var(--primary);
     }
 
     #search {
-      width: 100%;
-      max-width: 400px;
-      padding: 10px;
-      margin: 20px auto;
       display: block;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      margin: 0 auto 30px auto;
+      padding: 12px 16px;
+      width: 100%;
+      max-width: 500px;
       font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    #search:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
     }
 
     .buttons {
       text-align: center;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .buttons button {
-      margin: 5px;
-      padding: 10px 20px;
+      margin: 6px;
+      padding: 10px 18px;
+      background-color: var(--primary);
       border: none;
-      background-color: #007acc;
+      border-radius: 20px;
       color: white;
-      border-radius: 5px;
+      font-weight: 500;
       cursor: pointer;
-      font-weight: bold;
+      transition: 0.2s ease;
     }
 
     .buttons button:hover {
@@ -51,37 +76,68 @@
     ul#programList {
       list-style: none;
       padding: 0;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     ul#programList li {
-      background: #fff;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: var(--card-bg);
+      margin: 12px 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.2s ease;
+    }
+
+    ul#programList li:hover {
+      transform: scale(1.01);
     }
 
     ul#programList a {
       text-decoration: none;
-      color: #007acc;
-      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
     .category {
-      font-size: 12px;
-      background: #e0e0e0;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 10px;
+      background-color: #e3ecf5;
+      color: #007acc;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      ul#programList li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
     }
   </style>
 </head>
 <body>
+
   <h1>Jatin's C Programming Library</h1>
 
-  <input type="text" id="search" placeholder="Search for programs..." />
+  <input type="text" id="search" placeholder="🔍 Search for a program..." />
 
   <div class="buttons">
     <button onclick="filterPrograms('all')">All</button>
@@ -92,35 +148,38 @@
   </div>
 
   <ul id="programList">
-    <!-- Example programs. You can add more -->
     <li data-category="loop">
-      <a href="codes/ab_sum.c" target="_blank">While Loop Example</a>
-      <span class="category">loop</span>
+      <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
+      <span class="category">Loop</span>
     </li>
     <li data-category="array">
       <a href="codes/array_sum.c" target="_blank">Sum of Array Elements</a>
-      <span class="category">array</span>
+      <span class="category">Array</span>
     </li>
     <li data-category="string">
       <a href="codes/string_length.c" target="_blank">String Length</a>
-      <span class="category">string</span>
+      <span class="category">String</span>
     </li>
     <li data-category="math">
       <a href="codes/prime_checker.c" target="_blank">Prime Number Checker</a>
-      <span class="category">math</span>
+      <span class="category">Math</span>
     </li>
     <li data-category="array">
       <a href="codes/array_reverse.c" target="_blank">Reverse an Array</a>
-      <span class="category">array</span>
+      <span class="category">Array</span>
     </li>
   </ul>
+
+  <footer>
+    © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank">GitHub Profile</a>
+  </footer>
 
   <script>
     function filterPrograms(category) {
       const items = document.querySelectorAll("#programList li");
       items.forEach(item => {
         const match = category === "all" || item.dataset.category === category;
-        item.style.display = match ? "block" : "none";
+        item.style.display = match ? "flex" : "none";
       });
     }
 
@@ -129,9 +188,10 @@
       const items = document.querySelectorAll("#programList li");
       items.forEach(item => {
         const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(query) ? "block" : "none";
+        item.style.display = text.includes(query) ? "flex" : "none";
       });
     });
   </script>
+
 </body>
 </html>
