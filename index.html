@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jatin's C Programs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007acc;
+    }
+
+    #search {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007acc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buttons button:hover {
+      background-color: #005f99;
+    }
+
+    ul#programList {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    ul#programList li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    ul#programList a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+
+    .category {
+      font-size: 12px;
+      background: #e0e0e0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jatin's C Programming Library</h1>
+
+  <input type="text" id="search" placeholder="Search for programs..." />
+
+  <div class="buttons">
+    <button onclick="filterPrograms('all')">All</button>
+    <button onclick="filterPrograms('array')">Arrays</button>
+    <button onclick="filterPrograms('loop')">Loops</button>
+    <button onclick="filterPrograms('string')">Strings</button>
+    <button onclick="filterPrograms('math')">Math</button>
+  </div>
+
+  <ul id="programList">
+    <!-- Example programs. You can add more -->
+    <li data-category="loop">
+      <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
+      <span class="category">loop</span>
+    </li>
+    <li data-category="array">
+      <a href="codes/array_sum.c" target="_blank">Sum of Array Elements</a>
+      <span class="category">array</span>
+    </li>
+    <li data-category="string">
+      <a href="codes/string_length.c" target="_blank">String Length</a>
+      <span class="category">string</span>
+    </li>
+    <li data-category="math">
+      <a href="codes/prime_checker.c" target="_blank">Prime Number Checker</a>
+      <span class="category">math</span>
+    </li>
+    <li data-category="array">
+      <a href="codes/array_reverse.c" target="_blank">Reverse an Array</a>
+      <span class="category">array</span>
+    </li>
+  </ul>
+
+  <script>
+    function filterPrograms(category) {
+      const items = document.querySelectorAll("#programList li");
+      items.forEach(item => {
+        const match = category === "all" || item.dataset.category === category;
+        item.style.display = match ? "block" : "none";
+      });
+    }
+
+    document.getElementById("search").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const items = document.querySelectorAll("#programList li");
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
