@@ -3,48 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jatin's C Programs</title>
+  <title>Jatin's C Program Hub</title>
   <style>
+    /* Global Neon Dark Theme */
     body {
-      font-family: 'Segoe UI', monospace;
+      font-family: 'Courier New', monospace;
       margin: 0;
-      background: #000000;
-      color: #00ff88;
+      background: #000;
+      color: #39ff14;
     }
 
     header {
       padding: 40px 20px;
       text-align: center;
-      border-bottom: 1px solid #00ff88;
+      border-bottom: 1px solid #39ff14;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      color: #00ff88;
+      font-size: 2.8rem;
+      color: #39ff14;
+      text-shadow: 0 0 10px #39ff14;
     }
 
     header p {
-      font-size: 1rem;
-      margin-top: 8px;
-      color: #00ff88cc;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc;
     }
 
     .search-container {
-      margin: 20px auto;
       text-align: center;
+      margin: 25px auto;
     }
 
     #search {
       width: 90%;
       max-width: 400px;
       padding: 12px 16px;
-      background: #111;
-      color: #00ff88;
-      border: 1px solid #00ff88;
+      background: #000;
+      color: #39ff14;
+      border: 1px solid #39ff14;
       border-radius: 8px;
       font-size: 16px;
       outline: none;
+      box-shadow: 0 0 10px #39ff14;
     }
 
     .category-buttons {
@@ -56,18 +60,21 @@
     }
 
     .category-buttons button {
-      background-color: #00ff88;
-      border: none;
+      background: transparent;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
       padding: 10px 16px;
-      color: #000;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      transition: 0.2s ease;
+      text-shadow: 0 0 5px #00ffcc;
+      transition: 0.3s ease;
     }
 
     .category-buttons button:hover {
-      background-color: #00cc66;
+      background: #00ffcc;
+      color: #000;
+      box-shadow: 0 0 15px #00ffcc;
     }
 
     .grid {
@@ -80,59 +87,74 @@
     }
 
     .card {
-      background-color: #111;
-      border: 1px solid #00ff88;
+      background: #000;
+      border: 1px solid #39ff14;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 0 10px #00ff8855;
+      box-shadow: 0 0 15px #39ff14;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 20px #00ff88;
+      box-shadow: 0 0 25px #00ffcc;
     }
 
     .card a {
-      color: #00ff88;
+      color: #39ff14;
       text-decoration: none;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: bold;
+      text-shadow: 0 0 6px #39ff14;
     }
 
     .card a:hover {
       text-decoration: underline;
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
     }
 
     .tag {
       display: inline-block;
-      margin-top: 8px;
-      background-color: #00ff88;
+      margin-top: 10px;
+      background-color: #00ffcc;
       color: #000;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 50px;
       font-size: 0.75rem;
       text-transform: uppercase;
       font-weight: bold;
+      box-shadow: 0 0 10px #00ffcc;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      color: #00ff88aa;
+      color: #999;
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Jatin's C Program Library</h1>
-  <p>Dark Hacker Theme — Browse your C programs</p>
+  <h1>Jatin's C Program Hub</h1>
+  <p>Explore categorized C programs in neon-glow style</p>
 </header>
 
 <div class="search-container">
-  <input type="text" id="search" placeholder="🔍 Search for a program..." />
+  <input type="text" id="search" placeholder="🔍 Search programs..." />
 </div>
 
 <div class="category-buttons">
@@ -152,7 +174,7 @@
     <div class="tag">Loop</div>
   </div>
   <div class="card" data-category="array">
-    <a href="codes/array_sum.c" target="_blank">Sum of Array Elements</a>
+    <a href="codes/array_sum.c" target="_blank">Array Sum</a>
     <div class="tag">Array</div>
   </div>
   <div class="card" data-category="string">
@@ -164,7 +186,7 @@
     <div class="tag">Function</div>
   </div>
   <div class="card" data-category="math">
-    <a href="codes/prime_checker.c" target="_blank">Prime Number Checker</a>
+    <a href="codes/prime_checker.c" target="_blank">Prime Checker</a>
     <div class="tag">Math</div>
   </div>
   <div class="card" data-category="pointer">
@@ -172,13 +194,13 @@
     <div class="tag">Pointer</div>
   </div>
   <div class="card" data-category="structure">
-    <a href="codes/structure_student.c" target="_blank">Student Record Structure</a>
+    <a href="codes/structure_student.c" target="_blank">Student Record (Struct)</a>
     <div class="tag">Structure</div>
   </div>
 </div>
 
 <footer>
-  © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank" style="color:#00ff88;">GitHub</a>
+  © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank">GitHub</a>
 </footer>
 
 <script>
