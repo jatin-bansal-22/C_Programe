@@ -10,19 +10,42 @@
       margin: 0;
       background: #000;
       color: #39ff14;
+      overflow-x: hidden;
+    }
+
+    /* Animate on load */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes neonGlow {
+      0%, 100% {
+        text-shadow: 0 0 8px #39ff14, 0 0 20px #39ff14;
+      }
+      50% {
+        text-shadow: 0 0 4px #39ff14, 0 0 10px #00ffcc;
+      }
     }
 
     header {
       padding: 40px 20px 20px;
       text-align: center;
       border-bottom: 1px solid #39ff14;
+      animation: fadeInUp 1s ease;
     }
 
     header h1 {
       margin: 0;
       font-size: 2.8rem;
       color: #39ff14;
-      text-shadow: 0 0 10px #39ff14;
+      animation: neonGlow 2s infinite ease-in-out;
     }
 
     header p {
@@ -35,6 +58,7 @@
     .search-container {
       text-align: center;
       margin: 25px auto;
+      animation: fadeInUp 1.2s ease;
     }
 
     #search {
@@ -56,6 +80,7 @@
       justify-content: center;
       gap: 10px;
       margin: 20px auto;
+      animation: fadeInUp 1.4s ease;
     }
 
     .category-buttons button {
@@ -91,11 +116,12 @@
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 0 15px #39ff14;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1s ease;
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
       box-shadow: 0 0 25px #00ffcc;
     }
 
@@ -105,6 +131,7 @@
       font-size: 1.1rem;
       font-weight: bold;
       text-shadow: 0 0 6px #39ff14;
+      transition: 0.3s;
     }
 
     .card a:hover {
@@ -133,11 +160,24 @@
       border-top: 1px solid #39ff14;
       font-size: 1rem;
       color: #00ffcc;
+      animation: fadeInUp 1.2s ease;
     }
 
     .contact p {
       margin: 8px 0;
       text-shadow: 0 0 5px #00ffcc;
+      animation: neonGlow 3s infinite;
+    }
+
+    .contact a {
+      color: #39ff14;
+      text-decoration: none;
+      text-shadow: 0 0 5px #39ff14;
+    }
+
+    .contact a:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
     }
 
     footer {
@@ -163,7 +203,7 @@
 
 <header>
   <h1>Jatin's C Program Hub</h1>
-  <p>Explore categorized C programs in neon-glow style</p>
+  <p>Explore categorized C programs in glowing style</p>
 </header>
 
 <div class="search-container">
