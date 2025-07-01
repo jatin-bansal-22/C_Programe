@@ -149,19 +149,12 @@
       border-top: 1px solid #39ff14;
       font-size: 1rem;
       color: #00ffcc;
-      animation: fadeInUp 1.2s ease;
-    }
-
-    .contact p {
-      margin: 8px 0;
-      text-shadow: 0 0 5px #00ffcc;
-      animation: neonGlow 3s infinite;
     }
 
     .contact a {
       color: #39ff14;
-      text-decoration: none;
       text-shadow: 0 0 5px #39ff14;
+      text-decoration: none;
     }
 
     .contact a:hover {
@@ -217,17 +210,33 @@
 </div>
 
 <div class="grid" id="programGrid">
+  <div class="card" data-category="array">
+    <a href="codes/array.c" target="_blank">Array Program</a>
+    <div class="tag">Array</div>
+  </div>
   <div class="card" data-category="loop">
-    <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
+    <a href="codes/loop.c" target="_blank">Loop Program</a>
     <div class="tag">Loop</div>
   </div>
+  <div class="card" data-category="function">
+    <a href="codes/function.c" target="_blank">Function Example</a>
+    <div class="tag">Function</div>
+  </div>
   <div class="card" data-category="recursion">
-    <a href="codes/fibonacci.c" target="_blank">Fibonacci (Recursion)</a>
+    <a href="codes/recursion.c" target="_blank">Recursion</a>
     <div class="tag">Recursion</div>
   </div>
   <div class="card" data-category="file">
-    <a href="codes/file_read.c" target="_blank">Read from File</a>
+    <a href="codes/file.c" target="_blank">File Handling</a>
     <div class="tag">File</div>
+  </div>
+  <div class="card" data-category="sort">
+    <a href="codes/sorting.c" target="_blank">Sorting Program</a>
+    <div class="tag">Sorting</div>
+  </div>
+  <div class="card" data-category="pattern">
+    <a href="codes/pattern.c" target="_blank">Pattern Print</a>
+    <div class="tag">Pattern</div>
   </div>
 </div>
 
@@ -282,18 +291,25 @@
     }
   }
 
+  function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    comments.splice(index, 1);
+    localStorage.setItem('comments', JSON.stringify(comments));
+    renderComments();
+  }
+
   function renderComments() {
     const list = document.getElementById('commentList');
     list.innerHTML = '';
     const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-    comments.slice().reverse().forEach(comment => {
+    comments.slice().reverse().forEach((comment, i) => {
       const li = document.createElement('li');
       li.style.marginBottom = '15px';
       li.style.border = '1px solid #39ff14';
       li.style.padding = '10px';
       li.style.borderRadius = '8px';
       li.style.boxShadow = '0 0 10px #00ffcc44';
-      li.textContent = comment;
+      li.innerHTML = `${comment} <button onclick=\"deleteComment(${comments.length - 1 - i})\" style=\"margin-left:10px; background:#ff4444; border:none; color:#fff; padding:5px 10px; border-radius:4px; cursor:pointer;\">Delete</button>`;
       list.appendChild(li);
     });
   }
