@@ -6,29 +6,28 @@
   <title>Jatin's C Programs</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', monospace;
       margin: 0;
-      background: #f4f6f8;
-      color: #333;
+      background: #000000;
+      color: #00ff88;
     }
 
     header {
-      background: #ffffff;
       padding: 40px 20px;
       text-align: center;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #00ff88;
     }
 
     header h1 {
       margin: 0;
-      color: #007acc;
       font-size: 2.5rem;
+      color: #00ff88;
     }
 
     header p {
       font-size: 1rem;
       margin-top: 8px;
-      color: #666;
+      color: #00ff88cc;
     }
 
     .search-container {
@@ -40,9 +39,12 @@
       width: 90%;
       max-width: 400px;
       padding: 12px 16px;
-      border: 1px solid #ccc;
+      background: #111;
+      color: #00ff88;
+      border: 1px solid #00ff88;
       border-radius: 8px;
       font-size: 16px;
+      outline: none;
     }
 
     .category-buttons {
@@ -54,18 +56,18 @@
     }
 
     .category-buttons button {
-      background-color: #007acc;
+      background-color: #00ff88;
       border: none;
       padding: 10px 16px;
-      color: #fff;
+      color: #000;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: 500;
-      transition: background 0.2s ease;
+      font-weight: 600;
+      transition: 0.2s ease;
     }
 
     .category-buttons button:hover {
-      background-color: #005f99;
+      background-color: #00cc66;
     }
 
     .grid {
@@ -78,29 +80,35 @@
     }
 
     .card {
-      background-color: white;
+      background-color: #111;
+      border: 1px solid #00ff88;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 0 10px #00ff8855;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00ff88;
     }
 
     .card a {
-      color: #007acc;
+      color: #00ff88;
       text-decoration: none;
       font-size: 1.05rem;
       font-weight: bold;
     }
 
+    .card a:hover {
+      text-decoration: underline;
+    }
+
     .tag {
       display: inline-block;
       margin-top: 8px;
-      background-color: #eef6fa;
-      color: #007acc;
+      background-color: #00ff88;
+      color: #000;
       padding: 4px 10px;
       border-radius: 50px;
       font-size: 0.75rem;
@@ -111,7 +119,7 @@
     footer {
       text-align: center;
       padding: 30px;
-      color: #999;
+      color: #00ff88aa;
       font-size: 0.9rem;
     }
   </style>
@@ -120,7 +128,7 @@
 
 <header>
   <h1>Jatin's C Program Library</h1>
-  <p>Explore categorized and searchable C language programs</p>
+  <p>Dark Hacker Theme — Browse your C programs</p>
 </header>
 
 <div class="search-container">
@@ -170,7 +178,7 @@
 </div>
 
 <footer>
-  © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank">GitHub</a>
+  © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank" style="color:#00ff88;">GitHub</a>
 </footer>
 
 <script>
@@ -194,4 +202,3 @@
 
 </body>
 </html>
-
