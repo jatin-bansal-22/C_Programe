@@ -151,111 +151,155 @@
       color: #00ffcc;
       animation: fadeInUp 1.2s ease;
     }
+
+    .contact p {
+      margin: 8px 0;
+      text-shadow: 0 0 5px #00ffcc;
+      animation: neonGlow 3s infinite;
+    }
+
+    .contact a {
+      color: #39ff14;
+      text-decoration: none;
+      text-shadow: 0 0 5px #39ff14;
+    }
+
+    .contact a:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    footer a {
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to the Ultimate C Program Repository</h1>
-    <p>Here you can search your C language programs</p>
-  </header>
 
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search programs..." />
+<header>
+  <h1>Jatin's C Program Hub</h1>
+  <p>Here you can search your C language programs</p>
+</header>
+
+<div class="search-container">
+  <input type="text" id="search" placeholder="🔍 Search programs..." />
+</div>
+
+<div class="category-buttons">
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('array')">Array</button>
+  <button onclick="filterCategory('loop')">Loop</button>
+  <button onclick="filterCategory('string')">String</button>
+  <button onclick="filterCategory('function')">Function</button>
+  <button onclick="filterCategory('math')">Math</button>
+  <button onclick="filterCategory('pointer')">Pointer</button>
+  <button onclick="filterCategory('structure')">Structure</button>
+  <button onclick="filterCategory('recursion')">Recursion</button>
+  <button onclick="filterCategory('file')">File Handling</button>
+  <button onclick="filterCategory('sort')">Sorting</button>
+  <button onclick="filterCategory('search')">Searching</button>
+  <button onclick="filterCategory('pattern')">Pattern</button>
+  <button onclick="filterCategory('switch')">Switch-case</button>
+</div>
+
+<div class="grid" id="programGrid">
+  <div class="card" data-category="loop">
+    <a href="codes/while_loop.c" target="_blank">While Loop Example</a>
+    <div class="tag">Loop</div>
   </div>
-
-  <div class="category-buttons">
-    <button onclick="filterCategory('all')">All</button>
-    <button onclick="filterCategory('array')">Array</button>
-    <button onclick="filterCategory('loop')">Loop</button>
-    <button onclick="filterCategory('string')">String</button>
-    <button onclick="filterCategory('function')">Function</button>
-    <button onclick="filterCategory('recursion')">Recursion</button>
-    <button onclick="filterCategory('file')">File Handling</button>
-    <button onclick="filterCategory('sort')">Sorting</button>
-    <button onclick="filterCategory('pattern')">Pattern</button>
-    <button onclick="filterCategory('switch')">Switch Case</button>
+  <div class="card" data-category="recursion">
+    <a href="codes/fibonacci.c" target="_blank">Fibonacci (Recursion)</a>
+    <div class="tag">Recursion</div>
   </div>
-
-  <div class="grid" id="programGrid">
-    <div class="card" data-category="array">
-      <a href="#">Sum of Array Elements</a>
-      <div class="tag">Array</div>
-    </div>
-    <div class="card" data-category="loop">
-      <a href="#">While Loop</a>
-      <div class="tag">Loop</div>
-    </div>
-    <div class="card" data-category="function">
-      <a href="#">Factorial using Function</a>
-      <div class="tag">Function</div>
-    </div>
-    <!-- Add more cards here -->
+  <div class="card" data-category="file">
+    <a href="codes/file_read.c" target="_blank">Read from File</a>
+    <div class="tag">File</div>
   </div>
+</div>
 
-  <div class="contact">
-    <p>📧 Email: <a href="mailto:jatinb1901@gmail.com">jatinb1901@gmail.com</a></p>
-    <p>📞 Phone: <a href="tel:+9198772xxxxx">+91 98772XXXXX</a></p>
+<div class="contact">
+  <p>📧 Email: <a href="mailto:jatinb1901@gmail.com">jatinb1901@gmail.com</a></p>
+  <p>📞 Phone: <a href="tel:+9198772xxxxx">+91 98772XXXXX</a></p>
+</div>
+
+<!-- 💬 Comment Section -->
+<div class="contact">
+  <h2 style="animation: neonGlow 2s infinite; font-size: 1.5rem;">💬 Leave a Comment</h2>
+  <textarea id="commentBox" placeholder="Write your feedback..." rows="4" style="width:90%; max-width:500px; background:#000; border:1px solid #00ffcc; color:#39ff14; padding:10px; border-radius:8px;"></textarea><br><br>
+  <button onclick="postComment()" style="padding:10px 20px; background:#00ffcc; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">Post</button>
+
+  <div id="commentsSection" style="margin-top: 30px; max-width: 700px; margin-left:auto; margin-right:auto;">
+    <h3 style="text-align: left; color: #00ffcc;">📝 Previous Comments</h3>
+    <ul id="commentList" style="list-style:none; padding:0; text-align:left;"></ul>
   </div>
+</div>
 
-  <div class="contact">
-    <h2 style="animation: neonGlow 2s infinite; font-size: 1.5rem;">💬 Leave a Comment</h2>
-    <textarea id="commentBox" placeholder="Write your feedback..." rows="4" style="width:90%; max-width:500px; background:#000; border:1px solid #00ffcc; color:#39ff14; padding:10px; border-radius:8px;"></textarea><br><br>
-    <button onclick="postComment()" style="padding:10px 20px; background:#00ffcc; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">Post</button>
+<footer>
+  © 2025 Jatin Bansal • <a href="https://github.com/jatinbansal" target="_blank">Visit My GitHub</a>
+</footer>
 
-    <div id="commentsSection" style="margin-top: 30px; max-width: 700px; margin-left:auto; margin-right:auto;">
-      <h3 style="text-align: left; color: #00ffcc;">📝 Previous Comments</h3>
-      <ul id="commentList" style="list-style:none; padding:0; text-align:left;"></ul>
-    </div>
-  </div>
-
-  <script>
-    function filterCategory(cat) {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const match = cat === 'all' || card.dataset.category === cat;
-        card.style.display = match ? 'block' : 'none';
-      });
-    }
-
-    document.getElementById('search').addEventListener('input', function () {
-      const query = this.value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
+<script>
+  function filterCategory(cat) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const match = cat === 'all' || card.dataset.category === cat;
+      card.style.display = match ? 'block' : 'none';
     });
+  }
 
-    function postComment() {
-      const box = document.getElementById('commentBox');
-      const comment = box.value.trim();
-      if (comment.length > 0) {
-        let comments = JSON.parse(localStorage.getItem('comments') || '[]');
-        comments.push(comment);
-        localStorage.setItem('comments', JSON.stringify(comments));
-        box.value = '';
-        renderComments();
-      }
+  document.getElementById('search').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(query) ? 'block' : 'none';
+    });
+  });
+
+  function postComment() {
+    const box = document.getElementById('commentBox');
+    const comment = box.value.trim();
+    if (comment.length > 0) {
+      let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+      comments.push(comment);
+      localStorage.setItem('comments', JSON.stringify(comments));
+      box.value = '';
+      renderComments();
     }
+  }
 
-    function renderComments() {
-      const list = document.getElementById('commentList');
-      list.innerHTML = '';
-      const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-      comments.slice().reverse().forEach(comment => {
-        const li = document.createElement('li');
-        li.style.marginBottom = '15px';
-        li.style.border = '1px solid #39ff14';
-        li.style.padding = '10px';
-        li.style.borderRadius = '8px';
-        li.style.boxShadow = '0 0 10px #00ffcc44';
-        li.textContent = comment;
-        list.appendChild(li);
-      });
-    }
+  function renderComments() {
+    const list = document.getElementById('commentList');
+    list.innerHTML = '';
+    const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    comments.slice().reverse().forEach(comment => {
+      const li = document.createElement('li');
+      li.style.marginBottom = '15px';
+      li.style.border = '1px solid #39ff14';
+      li.style.padding = '10px';
+      li.style.borderRadius = '8px';
+      li.style.boxShadow = '0 0 10px #00ffcc44';
+      li.textContent = comment;
+      list.appendChild(li);
+    });
+  }
 
-    renderComments();
-  </script>
+  renderComments();
+</script>
+
 </body>
 </html>
-
